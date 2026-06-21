@@ -1,0 +1,280 @@
+/* ============================================
+   SERVICES SECTION — Enhanced Bootstrap Edition
+   ============================================ */
+
+/* Top accent bar */
+.services-topline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--navy), var(--orange), var(--navy));
+}
+
+.services-section {
+  background: var(--off-white);
+  position: relative;
+}
+
+/* ============================================
+   SERVICE CARD
+   ============================================ */
+
+.svc-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  border: 1px solid rgba(30, 58, 110, 0.09);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+/* Hover lift + shadow */
+.svc-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+/* Navy accent — flip to dark bg on hover */
+.svc-card--navy:hover {
+  background: var(--navy-dark);
+}
+
+/* Orange accent — flip to navy dark on hover */
+.svc-card--orange:hover {
+  background: var(--navy);
+}
+
+/* ============================================
+   DECORATIVE SHAPE (bottom-right circle)
+   ============================================ */
+
+.svc-hover-shape {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.06);
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.svc-card:hover .svc-hover-shape {
+  background: rgba(249, 115, 22, 0.14);
+  transform: scale(1.6);
+}
+
+/* ============================================
+   ICON
+   ============================================ */
+
+.svc-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+
+.svc-card--orange .svc-icon-wrap {
+  background: rgba(249, 115, 22, 0.1);
+  color: var(--orange);
+}
+
+.svc-card--navy .svc-icon-wrap {
+  background: rgba(30, 58, 110, 0.08);
+  color: var(--navy);
+}
+
+.svc-icon-wrap .bi {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.svc-card:hover .svc-icon-wrap {
+  background: rgba(249, 115, 22, 0.18);
+  color: var(--orange-light);
+  transform: scale(1.1) rotate(-6deg);
+}
+
+/* ============================================
+   NUMBER LABEL
+   ============================================ */
+
+.svc-number {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: rgba(30, 58, 110, 0.055);
+  line-height: 1;
+  letter-spacing: -2px;
+  pointer-events: none;
+  transition: color 0.35s ease;
+  z-index: 1;
+}
+
+.svc-card:hover .svc-number {
+  color: rgba(249, 115, 22, 0.13);
+}
+
+/* ============================================
+   TEXT
+   ============================================ */
+
+.svc-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.65rem;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.svc-card:hover .svc-title {
+  color: var(--white);
+}
+
+.svc-desc {
+  font-size: 0.875rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+}
+
+.svc-card:hover .svc-desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================
+   TAGS
+   ============================================ */
+
+.svc-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 0.22rem 0.7rem;
+  border-radius: 100px;
+  background: rgba(249, 115, 22, 0.09);
+  color: var(--orange-dark);
+  border: 1px solid rgba(249, 115, 22, 0.18);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.svc-card:hover .svc-tag {
+  background: rgba(249, 115, 22, 0.22);
+  color: var(--orange-light);
+  border-color: rgba(249, 115, 22, 0.35);
+}
+
+/* ============================================
+   LINK
+   ============================================ */
+
+.svc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--orange);
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+
+.svc-link .bi {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.svc-link:hover .bi {
+  transform: translateX(4px);
+}
+
+.svc-card:hover .svc-link {
+  color: var(--orange-light);
+}
+
+/* ============================================
+   CTA STRIP
+   ============================================ */
+
+.svc-cta-strip {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(30, 58, 110, 0.09);
+  box-shadow: var(--shadow-sm);
+}
+
+.svc-strip-icon {
+  font-size: 2.2rem;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+.svc-strip-heading {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.svc-strip-sub {
+  font-size: 0.875rem;
+  color: var(--gray);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 991px) {
+  .svc-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .svc-cta-strip {
+    text-align: center;
+    flex-direction: column !important;
+  }
+
+  .svc-cta-strip .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .svc-strip-heading,
+  .svc-strip-sub {
+    text-align: center;
+  }
+}

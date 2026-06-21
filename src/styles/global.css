@@ -1,0 +1,369 @@
+/* ============================================
+   GLOBAL THEME - ADITYA BUILDERS GROUP
+============================================ */
+
+:root {
+  /* Brand Colors */
+  --navy: #1e3a6e;
+  --navy-dark: #0f2040;
+  --navy-mid: #254d91;
+
+  --orange: #f97316;
+  --orange-light: #fb923c;
+  --orange-dark: #c2530a;
+
+  --white: #ffffff;
+  --off-white: #fafaf8;
+  --gray-light: #f0efec;
+  --gray: #7a7a7a;
+
+  --text-dark: #1b1b1b;
+  --text-body: #4d4d4d;
+
+  /* Gold aliases kept for backward-compat with any gold-referencing rules */
+  --gold: #f97316;
+  --gold-light: #fb923c;
+  --gold-pale: #fde8d4;
+
+  /* Typography */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 15px rgba(30, 58, 110, 0.08);
+  --shadow-md: 0 8px 30px rgba(30, 58, 110, 0.15);
+  --shadow-lg: 0 20px 60px rgba(30, 58, 110, 0.18);
+  --shadow-orange: 0 8px 30px rgba(249, 115, 22, 0.35);
+  --shadow-gold: 0 8px 30px rgba(249, 115, 22, 0.35);
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+
+  /* Transition */
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* ============================================
+   RESET
+============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--white);
+  overflow-x: hidden;
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   SECTION SPACING
+============================================ */
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.section-padding-sm {
+  padding: 70px 0;
+}
+
+/* ============================================
+   SECTION LABEL
+============================================ */
+
+.section-label {
+  position: relative;
+  display: inline-block;
+  padding-left: 2rem;
+  color: var(--orange);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1.3rem;
+  height: 2px;
+  background: var(--orange);
+  transform: translateY(-50%);
+}
+
+/* ============================================
+   TITLES
+============================================ */
+
+.section-title {
+  font-family: var(--font-heading);
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+.section-title span {
+  color: var(--orange);
+}
+
+.section-subtitle {
+  max-width: 650px;
+  color: var(--gray);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* ============================================
+   DIVIDER
+============================================ */
+
+.gold-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-light));
+  border-radius: 30px;
+  margin: 1rem 0 1.8rem;
+}
+
+/* ============================================
+   BUTTONS
+============================================ */
+
+/* Primary sun-orange button (replaces btn-gold) */
+.btn-gold,
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--orange);
+  border: 2px solid var(--orange);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 0.9rem 2rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before,
+.btn-orange::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--orange-dark);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.btn-gold:hover::before,
+.btn-orange:hover::before {
+  transform: translateX(0);
+}
+
+.btn-gold:hover,
+.btn-orange:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-orange);
+}
+
+.btn-gold span,
+.btn-gold svg,
+.btn-orange span,
+.btn-orange svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* Outline white button */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Navy button */
+.btn-navy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--navy);
+  border: 2px solid var(--navy);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.9rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-navy:hover {
+  background: var(--navy-mid);
+  border-color: var(--navy-mid);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   CARD
+============================================ */
+
+.card-3d {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   AOS
+============================================ */
+
+[data-aos] {
+  pointer-events: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* ============================================
+   SCROLLBAR
+============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--navy);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange);
+}
+
+/* ============================================
+   BOOTSTRAP OVERRIDES — keep Bootstrap utility
+   classes working with brand palette
+============================================ */
+
+.text-orange {
+  color: var(--orange) !important;
+}
+.text-navy {
+  color: var(--navy) !important;
+}
+.bg-navy {
+  background-color: var(--navy) !important;
+}
+.bg-orange {
+  background-color: var(--orange) !important;
+}
+.bg-off-white {
+  background-color: var(--off-white) !important;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 991px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-padding {
+    padding: 50px 0;
+  }
+}

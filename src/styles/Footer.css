@@ -1,0 +1,446 @@
+/* ============================================
+   FOOTER STYLES — Bootstrap Edition
+   ============================================ */
+
+.footer {
+  background: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Top section */
+.footer-top {
+  padding: 70px 0 50px;
+}
+
+/* Brand column */
+.footer-brand .footer-logo {
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.25rem;
+  text-decoration: none;
+}
+
+.footer-brand .logo-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.footer-brand .logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer-brand .logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.footer-brand .logo-tag {
+  font-size: 0.6rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Social links */
+.footer-social {
+  gap: 0.6rem;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  color: var(--white);
+  transition: var(--transition-fast);
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Column headings */
+.footer-col h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--gold);
+}
+
+/* Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-links li a {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-links li a::before {
+  content: "›";
+  color: var(--gold);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.footer-links li a:hover {
+  color: var(--gold);
+  transform: translateX(3px);
+}
+
+/* Contact info in footer */
+.footer-contact-item {
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-contact-item .fc-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(212, 160, 23, 0.12);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.footer-contact-item .fc-text {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.55;
+}
+
+.footer-contact-item .fc-text a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-contact-item .fc-text a:hover {
+  color: var(--gold);
+}
+
+.footer-cta-btn {
+  margin-top: 1.25rem;
+  font-size: 0.78rem;
+  padding: 0.65rem 1.2rem;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 1.5rem 0;
+}
+
+.footer-bottom-inner {
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.footer-bottom-inner p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+.footer-bottom-inner p span {
+  color: var(--gold);
+}
+
+.footer-bottom-inner p .bi-heart-fill {
+  color: var(--gold);
+  font-size: 0.7rem;
+  margin: 0 0.1rem;
+}
+
+.footer-bottom-links {
+  gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--gold);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  z-index: 900;
+  text-decoration: none;
+  transition: var(--transition);
+  animation: waBounce 3s ease-in-out infinite;
+}
+
+.whatsapp-fab:hover {
+  background: #1ebe5d;
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-fab .bi-whatsapp {
+  font-size: 1.75rem;
+  color: white;
+  line-height: 1;
+}
+
+/* Tooltip */
+.whatsapp-fab::before {
+  content: "Chat on WhatsApp";
+  position: absolute;
+  right: 68px;
+  background: var(--navy-dark);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  font-family: var(--font-body);
+}
+
+.whatsapp-fab:hover::before {
+  opacity: 1;
+}
+
+@keyframes waBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ============================================
+   POWERED BY HANDRALS
+   ============================================ */
+
+.footer-poweredby {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.6rem;
+  margin-top: 1.4rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.07);
+}
+
+.powered-by-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.75rem 0.75rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 160, 23, 0.18);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.powered-by-link:hover {
+  background: rgba(212, 160, 23, 0.08);
+  border-color: rgba(212, 160, 23, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(212, 160, 23, 0.2);
+}
+
+.powered-by-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.3px;
+}
+
+/* Rotating gradient ring around the logo */
+.powered-by-logo-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.powered-by-logo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--gold),
+    transparent 35%,
+    transparent 65%,
+    var(--gold)
+  );
+  animation: ringSpin 3.5s linear infinite;
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+}
+
+.powered-by-link:hover .powered-by-logo-wrap::before {
+  animation-duration: 1.4s;
+}
+
+.powered-by-logo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--white);
+  z-index: 1;
+}
+
+@keyframes ringSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shimmering gold text for the brand name */
+.powered-by-name {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: linear-gradient(
+    100deg,
+    rgba(212, 160, 23, 0.65) 0%,
+    var(--gold) 25%,
+    #fff3cf 50%,
+    var(--gold) 75%,
+    rgba(212, 160, 23, 0.65) 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -250% center;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .powered-by-logo-wrap::before,
+  .powered-by-name {
+    animation: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-poweredby {
+    padding-top: 0.9rem;
+    margin-top: 0.9rem;
+  }
+}

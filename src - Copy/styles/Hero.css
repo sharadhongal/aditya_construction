@@ -1,0 +1,336 @@
+/* ============================================
+   HERO SECTION STYLES (FINAL UPDATED)
+   ============================================ */
+
+:root {
+  --sun-gradient: linear-gradient(
+    135deg,
+    rgb(255, 163, 64),
+    rgb(255, 140, 30),
+    rgb(204, 100, 25)
+  );
+}
+
+/* ============================================
+   HERO LAYOUT
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--navy-dark);
+}
+
+/* Background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80");
+  background-size: cover;
+  background-position: center 30%;
+  background-attachment: fixed;
+  transform: scale(1.05);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1.05) translateX(0);
+  }
+  100% {
+    transform: scale(1.12) translateX(-1%);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 15, 34, 0.92) 0%,
+    rgba(10, 31, 68, 0.85) 40%,
+    rgba(10, 31, 68, 0.6) 100%
+  );
+}
+
+/* Shapes */
+.hero-shape-1 {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
+  border: 2px solid rgba(255, 140, 30, 0.12);
+  border-radius: 50%;
+  animation: rotateSlow 30s linear infinite;
+}
+
+.hero-shape-2 {
+  position: absolute;
+  bottom: 60px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(255, 140, 30, 0.08);
+  transform: rotate(45deg);
+  animation: rotateSlow 40s linear infinite reverse;
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   CONTENT
+   ============================================ */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  padding-top: 6rem;
+}
+
+/* Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 140, 30, 0.15);
+  border: 1px solid rgba(255, 140, 30, 0.4);
+  color: rgb(255, 163, 64);
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.45rem 1.1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: rgb(255, 140, 30);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+
+/* Title */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.12;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+
+/* Gradient text */
+.hero-title .gold-word {
+  background: var(--sun-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 2.5rem;
+}
+
+.hero-subtitle strong {
+  color: rgb(255, 163, 64);
+}
+
+/* ============================================
+   BUTTONS (FIXED 🔥)
+   ============================================ */
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #0a1f44;
+
+  background: var(--sun-gradient);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 140, 30, 0.4);
+}
+
+.btn-gold svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-gold:hover svg {
+  transform: translateX(4px);
+}
+
+/* Outline button */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgb(255, 140, 30);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--sun-gradient);
+  color: #0a1f44;
+  border-color: transparent;
+}
+
+/* ============================================
+   STATS
+   ============================================ */
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 140, 30, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem 1rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  position: relative;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255, 140, 30),
+    transparent
+  );
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 140, 30, 0.1);
+  border-color: rgb(255, 140, 30);
+  transform: translateY(-4px);
+}
+
+.stat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.stat-number {
+  font-size: 2.1rem;
+  font-weight: 900;
+  background: var(--sun-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ============================================
+   SCROLL INDICATOR
+   ============================================ */
+
+.scroll-mouse {
+  width: 22px;
+  height: 36px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scroll-mouse::after {
+  content: "";
+  width: 3px;
+  height: 7px;
+  background: rgb(255, 140, 30);
+  border-radius: 2px;
+  animation: scrollBounce 1.8s ease infinite;
+}
+
+@keyframes scrollBounce {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 767px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-bg {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-ctas {
+    flex-direction: column;
+  }
+}

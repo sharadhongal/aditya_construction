@@ -1,0 +1,245 @@
+/* ============================================
+   NAVBAR STYLES — Aditya Builders Group
+   Sun Orange Theme
+============================================ */
+
+.navbar-ab {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.2rem 0;
+  transition: var(--transition);
+  background: transparent;
+}
+
+.navbar-ab.scrolled {
+  background: var(--navy-dark);
+  padding: 0.8rem 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Logo ── */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover .logo-img {
+  transform: scale(1.08);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.logo-tag {
+  font-size: 0.62rem;
+  background: linear-gradient(
+    135deg,
+    var(--orange-light),
+    var(--orange),
+    var(--orange-dark)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ── Desktop Nav Links ── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+  position: relative;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0.8rem;
+  right: 0.8rem;
+  height: 1.5px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── CTA Button ── */
+.nav-cta {
+  background: linear-gradient(
+    135deg,
+    var(--orange-light),
+    var(--orange),
+    var(--orange-dark)
+  );
+  color: var(--white) !important;
+  font-weight: 700 !important;
+  padding: 0.65rem 1.4rem !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.78rem !important;
+  transition: var(--transition) !important;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+  color: var(--white) !important;
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile Full-screen Menu ── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--navy-dark);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-menu a {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  color: var(--orange);
+}
+
+.mobile-menu .nav-cta-mobile {
+  margin-top: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--orange-light),
+    var(--orange),
+    var(--orange-dark)
+  );
+  color: var(--white) !important;
+  padding: 0.85rem 2.5rem;
+  border-radius: 4px;
+  font-family: var(--font-body) !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+}
